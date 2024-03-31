@@ -1,3 +1,3 @@
 export default function Home() {
-  return <h1>Heloise ❤️</h1>;
+  return <h1>Working in progress</h1>;
 }
