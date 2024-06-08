@@ -9,6 +9,18 @@ test("Any method different from GET or POST returns 405 Not Allowed", async () =
   );
 
   expect(responseDelete.status).toBe(405);
+
+  const responsePut = await fetch("http://localhost:3000/api/v1/migrations", {
+    method: "PUT",
+  });
+
+  expect(responsePut.status).toBe(405);
+
+  const responsePatch = await fetch("http://localhost:3000/api/v1/migrations", {
+    method: "PATCH",
+  });
+
+  expect(responsePatch.status).toBe(405);
 });
 
 test("Any method different from GET or POST don't open extra database connections", async () => {
