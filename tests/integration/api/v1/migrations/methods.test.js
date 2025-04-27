@@ -1,4 +1,9 @@
 import database from "infra/database.js";
+import orchestrator from "tests/orchestrator.js";
+
+beforeAll(async () => {
+  await orchestrator.waitForAllServices();
+});
 
 test("Any method different from GET or POST returns 405 Not Allowed", async () => {
   const responseDelete = await fetch(
